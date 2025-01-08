@@ -2,18 +2,18 @@ package Day03;
 
 public class PersegiPanjang extends BangunDatar {
     
-    private int panjang;
-    private int lebar;
+    private double panjang;
+    private double lebar;
 
     public PersegiPanjang() {
         
     }
 
-    public PersegiPanjang(int panjang, int lebar) {
+    public PersegiPanjang(double panjang, double lebar) {
         super();
     }
 
-    public void setSisi(int panjang, int lebar) {
+    public void setSisi(double panjang, double lebar) {
         this.panjang = panjang;
         this.lebar = lebar;
         setHorizontal(panjang);
@@ -21,12 +21,12 @@ public class PersegiPanjang extends BangunDatar {
     }
 
     public void hitungLuas(){
-        int luas = panjang * lebar;
+        double luas = panjang * lebar;
         System.out.println("Luas persegi panjang : " + luas);
     }
 
     public void hitungKeliling(){
-        int keliling = 2 * (panjang + lebar);
+        double keliling = 2 * (panjang + lebar);
         System.out.println("Keliling persegi panjang : " + keliling);
     }
 

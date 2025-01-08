@@ -1,5 +1,7 @@
 package Day03;
 
+import java.util.Scanner;
+
 public class App {
 
     public static void main(String[] args) {
@@ -19,10 +21,16 @@ public class App {
         persegi.hitungLuas();
         persegi.hitungKeliling();
 
+        Scanner s = new Scanner(System.in);
+
         System.out.println("=================");
 
         PersegiPanjang persegiPanjang = new PersegiPanjang();
-        persegiPanjang.setSisi(5, 6);
+        System.out.print("Panjang persegi panjang : ");
+        double panjang = s.nextDouble();
+        System.out.print("Lebar persegi panjang : ");
+        double lebar = s.nextDouble();
+        persegiPanjang.setSisi(panjang, lebar);
         persegiPanjang.hitungLuas();
         persegiPanjang.hitungKeliling();
 
