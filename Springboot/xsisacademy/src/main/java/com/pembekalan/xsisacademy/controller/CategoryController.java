@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -59,6 +60,15 @@ public class CategoryController {
         view.addObject("category", category);
         return view;
     }
+    
+    @GetMapping("/delete/{id}")
+    public ModelAndView delete(@PathVariable Integer id) {
+        Category category = categoryRepository.findById(id).orElse(null);
+        categoryRepository.deleteById(category.getId());
+        return new ModelAndView("redirect:/category");
+    }
+
+    
     
     
     
