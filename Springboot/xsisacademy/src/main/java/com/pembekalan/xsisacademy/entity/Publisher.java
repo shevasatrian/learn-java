@@ -11,28 +11,24 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "categories")
+@Table(name = "publishers")
 @Data
 @EqualsAndHashCode(callSuper = true)
-//@NoArgsConstructor
-public class Category extends BaseEntity {
+@NoArgsConstructor
+public class Publisher extends BaseEntity {
 
-    public Category() {
-
-    }
-
-    public Category(String name) {
+    public Publisher(String name, String address) {
         this.name = name;
+        this.address = address;
     }
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Integer id;
 
     @Column(length = 100)
     private String name;
 
+    private String address;
     
-
 }

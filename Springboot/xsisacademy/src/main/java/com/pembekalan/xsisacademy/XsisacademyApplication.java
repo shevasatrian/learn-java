@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.github.javafaker.Faker;
 import com.pembekalan.xsisacademy.entity.Category;
+import com.pembekalan.xsisacademy.entity.Publisher;
 import com.pembekalan.xsisacademy.entity.User;
 import com.pembekalan.xsisacademy.repository.CategoryRepository;
+import com.pembekalan.xsisacademy.repository.PublisherRepository;
 import com.pembekalan.xsisacademy.repository.UserRepository;
 
 @SpringBootApplication
@@ -23,6 +25,9 @@ public class XsisacademyApplication {
 
 	@Autowired
 	UserRepository userRepository;
+
+	@Autowired
+	PublisherRepository publisherRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(XsisacademyApplication.class, args);
@@ -46,6 +51,11 @@ public class XsisacademyApplication {
 			for (int i = 0; i < 10; i++) {
 				User userSeed = new User(faker.name().fullName(), faker.phoneNumber().phoneNumber(), faker.address().fullAddress());
 				userRepository.save(userSeed);
+			}
+
+			for (int i = 0; i < 10; i++) {
+				Publisher publisherSeed = new Publisher(faker.book().publisher(), faker.address().fullAddress());
+				publisherRepository.save(publisherSeed);
 			}
 		};
 	}
