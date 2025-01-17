@@ -33,7 +33,7 @@
                 <td th:text="${book.publisher.name}"></td>
                 <td th:text="${book.synopsis}"></td>
                 <td th:text="${book.stock}"></td>
-                <td th:text="${#temporals.format(book.publishedAt, 'dd-MM-yyyy')}"></td>
+                <td th:text="${book.publishedAt}"></td>
                 <td>
                     <button type="button" class="btn btn-sm btn-primary" th:value="${book.id}" onclick="editForm(this.value)">
                         <i class="bi bi-eye"></i>

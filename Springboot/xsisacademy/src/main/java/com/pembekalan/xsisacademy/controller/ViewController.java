@@ -25,6 +25,15 @@ public class ViewController {
         return "publisher/index"; // templates/publisher/index.html
     }
 
+//    @GetMapping("/publisher")
+//    public String getAllPublishers(Model model) {
+//        String title = "Publisher Page";
+//        Map response = restTemplate.getForObject(ApiEndpoints.PUBLISHERS, Map.class);
+//        model.addAttribute("publishers", response.get("data"));
+//        model.addAttribute("title", title);
+//        return "publisher/index"; // templates/publisher/index.html
+//    }
+
     @GetMapping("/author")
     public String getAllAuthors(Model model) {
         String title = "Author Page";
@@ -41,6 +50,11 @@ public class ViewController {
         model.addAttribute("books", response.get("data"));
         model.addAttribute("title", title);
         return "book/index"; // templates/publisher/index.html
+    }
+
+    @GetMapping("/form")
+    public String getPublisherForm() {
+        return "publisher/form";  // Mengarah ke templates/publisher/form.html
     }
 
 }

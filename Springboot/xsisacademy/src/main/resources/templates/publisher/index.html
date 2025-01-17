@@ -28,7 +28,7 @@
                     <button type="button" class="btn btn-sm btn-primary" th:value="${publisher.id}" onclick="editForm(this.value)">
                         <i class="bi bi-eye"></i>
                     </button>
-                    <button type="button" class="btn btn-sm btn-danger" th:value="${publisher.id}" onclick="confirm('Are you sure?', deleteCategory(this.value))">
+                    <button type="button" class="btn btn-sm btn-danger" th:value="${publisher.id}" onclick="confirm('Are you sure?', deletePublisher(this.value))">
                         <i class="bi bi-trash3"></i>
                     </button>
 
@@ -60,20 +60,25 @@
                     ></button>
                 </div>
                 <div class="modal-body">
-                    <!-- <div class="mb-3">
-
-                        <label for="name" class="form-label">Email address</label>
-
-                        <input type="text" class="form-control" id="name" name="name">
-
-                    </div> -->
+                    <form id="publisherForm">
+                        <input type="hidden" id="id">
+                        <div class="mb-3">
+                            <label class="form-label">Publisher Name</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <textarea class="form-control" id="address" name="address" rows="3"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="savePublisher()">Save</button>
+                    </form>
                 </div>
 
             </div>
         </div>
     </div>
 
-<!--    <script th:src="@{/js/category.js}"></script>-->
+    <script th:src="@{/js/publisher.js}"></script>
 </section>
 
 
